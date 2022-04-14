@@ -95,14 +95,13 @@ class SnakeGameClass:
             self.gameOver=True      
      else:
               cvzone.putTextRect(imgMain,"Game Over",[150,200],scale=5,thickness=5,offset=10)
-              cvzone.putTextRect(imgMain,f'Your score:{self.score}',[150,300],scale=5,thickness=5,offset=10)
+              cvzone.putTextRect(imgMain,f'Your score:{self.score}',[75,300],scale=5,thickness=5,offset=10)
               try:
                 self.points=[]
                 self.lengths=[]
                 self.currentLength=0
                 self.allowedLength=150
                 self.previousHead=0,0
-                self.score=0
                 self.randomFoodlocation()
               except:
                   self.randomFoodlocation()
@@ -127,3 +126,4 @@ while True:
     key=cv2.waitKey(1)
     if key==ord('r'):
          game.gameOver=False
+         game.score=0
